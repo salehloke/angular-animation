@@ -6,7 +6,7 @@ import {
   query,
 } from '@angular/animations';
 
-export const ROUTE_ANIMATION = trigger('routeAnimation', [
+export const ROUTE_ANIMATION = trigger('routeAnimations', [
   style({
     position: 'relative',
   }),

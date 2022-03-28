@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
@@ -20,12 +20,14 @@ const routes: Routes = [
     data: {
       transitionState: 'AboutPage',
     },
-    loadChildren: () => import('./about/about.module'),
+    loadChildren: () =>
+      import('./about/about.module').then((m) => m.AboutModule),
   },
 ];
 
 @NgModule({
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
   declarations: [],
 })
 export class AppRoutingModule {}

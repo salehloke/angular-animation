@@ -1,4 +1,5 @@
-import { Component, VERSION } from '@angular/core';
+import { Component, VERSION, ViewChild } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'my-app',
@@ -6,5 +7,7 @@ import { Component, VERSION } from '@angular/core';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
+  @ViewChild(RouterOutlet) routerOutlet;
+  
   name = 'Angular ' + VERSION.major;
 }

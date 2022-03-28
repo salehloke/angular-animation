@@ -9,21 +9,19 @@ const routes: Routes = [
     redirectTo: 'home',
   },
   {
-    path: 'dashboard',
+    path: 'home',
     data: {
       transitionState: 'HomePage',
     },
-    loadChildren: () =>
-      import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+    loadChildren: () => import('./home/home.module').then((m) => m.HomeModule),
   },
   {
     path: 'about',
     data: {
       transitionState: 'AboutPage',
     },
-    loadChildren: ()=>
-    import('./das')
-  }
+    loadChildren: () => import('./about/about.module'),
+  },
 ];
 
 @NgModule({

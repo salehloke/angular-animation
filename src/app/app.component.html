@@ -2,5 +2,19 @@
   <h1>Angular routing</h1>
 </header>
 
-<div [@routeAnimations]="getRouteAnimationData()"></div>
-<router-outlet></router-outlet>
+<div [@routeAnimation]="getRouteAnimationData()">
+  <ul ngbNav class="nav-tabs">
+    <li [ngbNavItem]="link.path" *ngFor="let link of links">
+      <a ngbNavLink routerLink="." [fragment]="link.path">{{ link.path }}</a>
+    </li>
+  </ul>
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="/about">About</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
+</div>
